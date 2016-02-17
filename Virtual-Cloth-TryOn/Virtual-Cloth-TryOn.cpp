@@ -10,6 +10,7 @@
 
 #include "Virtual-Cloth-TryOnDoc.h"
 #include "Virtual-Cloth-TryOnView.h"
+#include "View3D.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -103,7 +104,8 @@ BOOL CVirtualClothTryOnApp::InitInstance()
 		IDR_MAINFRAME,
 		RUNTIME_CLASS(CVirtualClothTryOnDoc),
 		RUNTIME_CLASS(CMainFrame),       // 主 SDI 框架窗口
-		RUNTIME_CLASS(CVirtualClothTryOnView));
+		RUNTIME_CLASS(View3D));
+		//RUNTIME_CLASS(CVirtualClothTryOnView));
 	if (!pDocTemplate)
 		return FALSE;
 	AddDocTemplate(pDocTemplate);
@@ -123,6 +125,9 @@ BOOL CVirtualClothTryOnApp::InitInstance()
 	// 唯一的一个窗口已初始化，因此显示它并对其进行更新
 	m_pMainWnd->ShowWindow(SW_SHOW);
 	m_pMainWnd->UpdateWindow();
+
+	((CMainFrame*)m_pMainWnd)->CreateViews();
+
 	return TRUE;
 }
 

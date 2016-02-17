@@ -4,6 +4,8 @@
 
 #pragma once
 
+class View3D;
+
 class CMainFrame : public CFrameWnd
 {
 	
@@ -38,6 +40,10 @@ protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	DECLARE_MESSAGE_MAP()
 
+private:
+	View3D*		m_p3DView;
+public:
+	BOOL CreateViews();
 };
 
 
