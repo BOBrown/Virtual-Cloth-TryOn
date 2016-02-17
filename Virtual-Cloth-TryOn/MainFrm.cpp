@@ -6,6 +6,7 @@
 #include "Virtual-Cloth-TryOn.h"
 
 #include "MainFrm.h"
+#include "View3D.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -36,6 +37,7 @@ static UINT indicators[] =
 CMainFrame::CMainFrame()
 {
 	// TODO:  在此添加成员初始化代码
+	m_p3DView = NULL;
 }
 
 CMainFrame::~CMainFrame()
@@ -95,5 +97,19 @@ void CMainFrame::Dump(CDumpContext& dc) const
 #endif //_DEBUG
 
 
+BOOL CMainFrame::CreateViews()
+{
+	CView* pActiveView = GetActiveView();
+	UINT   active_gwl = ::GetWindowLong(pActiveView->m_hWnd, GWL_ID);
+	m_p3DView = (View3D*)pActiveView;
+
+	::SetWindowLong(m_p3DView->m_hWnd, GWL_ID, active_gwl);
+	m_p3DView->ShowWindow(SW_SHOW);
+	SetActiveView(m_p3DView);
+	RecalcLayout();
+
+
+	return TRUE;
+}
 // CMainFrame 消息处理程序
 

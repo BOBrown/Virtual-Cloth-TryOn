@@ -39,6 +39,9 @@
     <ClInclude Include="Resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="View3D.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Virtual-Cloth-TryOn.cpp">
@@ -54,6 +57,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Virtual-Cloth-TryOnView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="View3D.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
