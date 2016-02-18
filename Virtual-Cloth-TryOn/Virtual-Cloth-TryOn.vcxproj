@@ -54,10 +54,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\xinderuila\Desktop\Virtual-Cloth-TryOn\dependencies\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -101,21 +104,28 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Drawable.h" />
+    <ClInclude Include="GLFunction.h" />
     <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="OpenGLView.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="UIOperation.h" />
     <ClInclude Include="View3D.h" />
     <ClInclude Include="Virtual-Cloth-TryOn.h" />
     <ClInclude Include="Virtual-Cloth-TryOnDoc.h" />
     <ClInclude Include="Virtual-Cloth-TryOnView.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GLFunction.cpp" />
     <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="OpenGLView.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="UIOperation.cpp" />
     <ClCompile Include="View3D.cpp" />
     <ClCompile Include="Virtual-Cloth-TryOn.cpp" />
     <ClCompile Include="Virtual-Cloth-TryOnDoc.cpp" />
