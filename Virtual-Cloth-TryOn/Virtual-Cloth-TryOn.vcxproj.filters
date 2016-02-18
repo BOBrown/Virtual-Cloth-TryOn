@@ -42,6 +42,18 @@
     <ClInclude Include="View3D.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="OpenGLView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UIOperation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Drawable.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GLFunction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Virtual-Cloth-TryOn.cpp">
@@ -60,6 +72,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="View3D.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGLView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFunction.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UIOperation.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

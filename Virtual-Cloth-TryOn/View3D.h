@@ -2,8 +2,9 @@
 
 
 //View3D йсм╪
+#include "OpenGLView.h"
 
-class View3D : public CView
+class View3D : public OpenGLView
 {
 	DECLARE_DYNCREATE(View3D)
 
