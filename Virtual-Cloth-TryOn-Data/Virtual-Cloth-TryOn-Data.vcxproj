@@ -11,20 +11,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{263AA2E7-FFE5-4FD2-8141-F8E0D8899749}</ProjectGuid>
-    <RootNamespace>VirtualClothTryOn</RootNamespace>
-    <Keyword>MFCProj</Keyword>
+    <ProjectGuid>{69C4E7BB-2C8C-4B16-87E3-520C53ACBA2A}</ProjectGuid>
+    <RootNamespace>VirtualClothTryOnData</RootNamespace>
+    <Keyword>MFCDLLProj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -52,19 +52,18 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\xinderuila\Desktop\Virtual-Cloth-TryOn\dependencies\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\xinderuila\Desktop\Virtual-Cloth-TryOn\lib\Debug;C:\Users\xinderuila\Desktop\Virtual-Cloth-TryOn\dependencies\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32.lib;glu32.lib;opengl32.lib;Virtual-Cloth-TryOn-Data.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>.\Virtual-Cloth-TryOn-Data.def</ModuleDefinitionFile>
+      <ImportLibrary>$(SolutionDir)/lib/$(Configuration)/$(TargetName).lib</ImportLibrary>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
-      <ValidateAllParameters>true</ValidateAllParameters>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </Midl>
     <ResourceCompile>
@@ -80,7 +79,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -88,10 +87,10 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>.\Virtual-Cloth-TryOn-Data.def</ModuleDefinitionFile>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
-      <ValidateAllParameters>true</ValidateAllParameters>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </Midl>
     <ResourceCompile>
@@ -104,44 +103,32 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ClothRender.h" />
-    <ClInclude Include="GLFunction.h" />
-    <ClInclude Include="MainFrm.h" />
-    <ClInclude Include="OpenGLView.h" />
-    <ClInclude Include="Resource.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
-    <ClInclude Include="UIOperation.h" />
-    <ClInclude Include="View3D.h" />
-    <ClInclude Include="Virtual-Cloth-TryOn.h" />
-    <ClInclude Include="Virtual-Cloth-TryOnDoc.h" />
-    <ClInclude Include="Virtual-Cloth-TryOnView.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="ClothRender.cpp" />
-    <ClCompile Include="GLFunction.cpp" />
-    <ClCompile Include="MainFrm.cpp" />
-    <ClCompile Include="OpenGLView.cpp" />
+    <ClCompile Include="DataCamera3D.cpp" />
+    <ClCompile Include="DataCloth.cpp" />
+    <ClCompile Include="DataPattern.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="UIOperation.cpp" />
-    <ClCompile Include="View3D.cpp" />
-    <ClCompile Include="Virtual-Cloth-TryOn.cpp" />
-    <ClCompile Include="Virtual-Cloth-TryOnDoc.cpp" />
-    <ClCompile Include="Virtual-Cloth-TryOnView.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Virtual-Cloth-TryOn.rc" />
+    <ClInclude Include="BaseExport.h" />
+    <ClInclude Include="DataBase.h" />
+    <ClInclude Include="DataCamera3D.h" />
+    <ClInclude Include="DataCloth.h" />
+    <ClInclude Include="DataMesh.h" />
+    <ClInclude Include="DataPattern.h" />
+    <ClInclude Include="Drawable.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\VirtualClothTryOn.rc2" />
+    <None Include="res\VirtualClothTryOnData.rc2" />
+    <None Include="Virtual-Cloth-TryOn-Data.def" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\Toolbar.bmp" />
-    <Image Include="res\Virtual-Cloth-TryOn.ico" />
-    <Image Include="res\Virtual-Cloth-TryOnDoc.ico" />
+    <ResourceCompile Include="Virtual-Cloth-TryOn-Data.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -48,10 +48,10 @@
     <ClInclude Include="UIOperation.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Drawable.h">
+    <ClInclude Include="GLFunction.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="GLFunction.h">
+    <ClInclude Include="ClothRender.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -81,6 +81,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="UIOperation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ClothRender.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

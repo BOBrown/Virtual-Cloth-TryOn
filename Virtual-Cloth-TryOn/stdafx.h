@@ -52,3 +52,16 @@
 #endif
 
 
+class CVirtualClothTryOnDoc;
+inline CVirtualClothTryOnDoc* GetActiveDocument()
+{
+	CVirtualClothTryOnDoc* pDoc = NULL;
+	CWnd* pWndMain = AfxGetMainWnd();
+	if (NULL != pWndMain)
+	{
+		pDoc = (CVirtualClothTryOnDoc*)(((CFrameWnd*)pWndMain)->GetActiveDocument());
+	}
+	return pDoc;
+}
+
+

@@ -1,0 +1,7 @@
+#ifndef _VIRTUAL_CLOTH_TRYON_DATA_BASE_H_
+#define _VIRTUAL_CLOTH_TRYON_DATA_BASE_H_
+class CLOTH_DATA_DLL DataBase
+{
+
+};
+#endif

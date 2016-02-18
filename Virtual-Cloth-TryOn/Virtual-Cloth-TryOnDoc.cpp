@@ -10,6 +10,8 @@
 #endif
 
 #include "Virtual-Cloth-TryOnDoc.h"
+#include "../Virtual-Cloth-TryOn-Data/DataCloth.h"
+#include "../Virtual-Cloth-TryOn-Data/DataCamera3D.h"
 
 #include <propkey.h>
 
@@ -30,7 +32,8 @@ END_MESSAGE_MAP()
 CVirtualClothTryOnDoc::CVirtualClothTryOnDoc()
 {
 	// TODO:  在此添加一次性构造代码
-
+	m_pCloth = new DataCloth;
+	m_pCamera3D = new DataCamera3D;
 }
 
 CVirtualClothTryOnDoc::~CVirtualClothTryOnDoc()

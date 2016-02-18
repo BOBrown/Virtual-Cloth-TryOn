@@ -4,6 +4,10 @@
 
 
 #pragma once
+#include <vector>
+
+class DataCloth;
+class DataCamera3D;
 
 
 class CVirtualClothTryOnDoc : public CDocument
@@ -40,6 +44,9 @@ protected:
 // 生成的消息映射函数
 protected:
 	DECLARE_MESSAGE_MAP()
+public:
+	DataCloth*				m_pCloth;
+	DataCamera3D*			m_pCamera3D;
 
 #ifdef SHARED_HANDLERS
 	// 用于为搜索处理程序设置搜索内容的 Helper 函数

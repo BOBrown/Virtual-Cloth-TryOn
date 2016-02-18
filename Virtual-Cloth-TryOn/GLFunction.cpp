@@ -4,14 +4,27 @@
 
 void GLDrawTriangle()
 {
-	glBegin(GL_POLYGON);
-	glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
-	glVertex2f(100.0f, 50.0f);
-	glColor4f(0.0f, 1.0f, 0.0f, 1.0f);
-	glVertex2f(450.0f, 400.0f);
-	glColor4f(0.0f, 0.0f, 1.0f, 1.0f);
-	glVertex2f(450.0f, 50.0f);
+	glDisable(GL_LIGHTING);//记得要关闭光照
+	glBegin(GL_TRIANGLES);
+	glColor3f(0, 1, 0);
+	glVertex3f(0.0f, 0.0f, 0.0f);
+	glVertex3f(0.0f, 1000.0f, 0.0f);
+	glVertex3f(1000.0f, 0.0f, 0.0f);
+
+	glColor3f(1, 0, 0);
+	glVertex3f(0.0f, 0.0f, 0.0f);
+	glVertex3f(0.0f, 1000.0f, 0.0f);
+	glVertex3f(-1000.0f, 0.0f, 0.0f);
+
+
+	glColor3f(0, 0, 1);
+	glVertex3f(0.0f, 0.0f, 0.0f);
+	glVertex3f(0.0f, 0.0f, 1000.0f);
+	glVertex3f(1000.0f, 0.0f, 0.0f);
+
+
 	glEnd();
+
 }
 
 void GLDrawLine(glm::vec3 pt1, glm::vec3 pt2)

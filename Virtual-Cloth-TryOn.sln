@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Virtual-Cloth-TryOn", "Virtual-Cloth-TryOn\Virtual-Cloth-TryOn.vcxproj", "{263AA2E7-FFE5-4FD2-8141-F8E0D8899749}"
+	ProjectSection(ProjectDependencies) = postProject
+		{69C4E7BB-2C8C-4B16-87E3-520C53ACBA2A} = {69C4E7BB-2C8C-4B16-87E3-520C53ACBA2A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Virtual-Cloth-TryOn-Data", "Virtual-Cloth-TryOn-Data\Virtual-Cloth-TryOn-Data.vcxproj", "{69C4E7BB-2C8C-4B16-87E3-520C53ACBA2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{263AA2E7-FFE5-4FD2-8141-F8E0D8899749}.Debug|Win32.Build.0 = Debug|Win32
 		{263AA2E7-FFE5-4FD2-8141-F8E0D8899749}.Release|Win32.ActiveCfg = Release|Win32
 		{263AA2E7-FFE5-4FD2-8141-F8E0D8899749}.Release|Win32.Build.0 = Release|Win32
+		{69C4E7BB-2C8C-4B16-87E3-520C53ACBA2A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{69C4E7BB-2C8C-4B16-87E3-520C53ACBA2A}.Debug|Win32.Build.0 = Debug|Win32
+		{69C4E7BB-2C8C-4B16-87E3-520C53ACBA2A}.Release|Win32.ActiveCfg = Release|Win32
+		{69C4E7BB-2C8C-4B16-87E3-520C53ACBA2A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
