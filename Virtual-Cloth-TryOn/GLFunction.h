@@ -1,3 +1,4 @@
+//opengl图形绘制的实现函数
 #ifndef _VIRTUAL_CLOTH_TRYON_GL_FUNCTION_H_
 #define _VIRTUAL_CLOTH_TRYON_GL_FUNCTION_H_
 
