@@ -38,15 +38,18 @@ END_MESSAGE_MAP()
 
 
 //View3D 绘图
-
+//文档需要刷新时，系统会自动调用该函数
 void View3D::OnDraw(CDC* pDC)
 {
-
+	//mfc中开启opengl绘制模式
 	SceneBegin();
 
+	//opengl具体的绘制操作（用专门的一个类来管理）
 	ClothRender render;
 	render.Render();
 
+
+	//mfc中opengl绘制模式结束操作
 	SceneFlip();
 	SceneEnd();
 }		

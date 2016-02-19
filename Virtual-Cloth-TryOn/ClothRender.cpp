@@ -40,11 +40,13 @@ void ClothRender::DrawCloth(DataCloth* cloth)
 
 void ClothRender::Render()
 {
-	CVirtualClothTryOnDoc* doc = GetActiveDocument();	
+	CVirtualClothTryOnDoc* doc = GetActiveDocument();//有了doc就有了绘制需要的数据文件	 
 	if (!doc) return;
 
 	SetupCamera(doc->m_pCamera3D);
 	SetupRender();
+
+	//下面可以测试绘制一些具体的图形
 	GLDrawTriangle();
 }
 
