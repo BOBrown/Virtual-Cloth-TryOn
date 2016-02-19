@@ -3,11 +3,12 @@
 
 #include "stdafx.h"
 #include "Virtual-Cloth-TryOn.h"
+#include "Virtual-Cloth-TryOnDoc.h"
 #include "View3D.h"
 #include "OpenGLView.h"
 #include "../dependencies/include/gl/GL.h"
 #include "GLFunction.h"
-#include "ClothRender.h"
+#include "../Virtual-Cloth-TryOn-Data/DataCamera3D.h"
 
 
 // HouseView3D
@@ -24,7 +25,7 @@ View3D::~View3D()
 }
 
 BEGIN_MESSAGE_MAP(View3D, OpenGLView)
-	//ON_WM_SIZE()//窗口大小变化时，出发相应逻辑处理
+	ON_WM_SIZE()//窗口大小变化时，出发相应逻辑处理
 	ON_WM_LBUTTONDOWN()
 	ON_WM_RBUTTONDOWN()
 	ON_WM_RBUTTONUP()
@@ -45,8 +46,7 @@ void View3D::OnDraw(CDC* pDC)
 	SceneBegin();
 
 	//opengl具体的绘制操作（用专门的一个类来管理）
-	ClothRender render;
-	render.Render();
+	m_Render.Render();
 
 
 	//mfc中opengl绘制模式结束操作
@@ -75,11 +75,15 @@ void View3D::Dump(CDumpContext& dc) const
 //View3D 消息处理程序
 void View3D::OnSize(UINT nType, int cx, int cy)
 {
-	//OpenGLView::OnSize(nType, cx, cy);
-	//float aspect = (float)cy / cx;
-	//DataCamera3D* camera = m_pDataManager->m_pCamera3D;
-	//camera->SetSize(cx, cy);
-	//Render();
+	OpenGLView::OnSize(nType, cx, cy);
+	float aspect = (float)cy / cx;
+
+	CVirtualClothTryOnDoc* doc = GetActiveDocument();//有了doc就有了绘制需要的数据文件	 
+	if (!doc) return;
+
+	DataCamera3D* camera = doc->m_pCamera3D;
+	camera->SetSize(cx, cy);
+	m_Render.Render();
 }
 
 void View3D::OnLButtonDown(UINT nFlags, CPoint point)

@@ -54,7 +54,7 @@ void ClothRender::SetupCamera(DataCamera3D* camera)
 {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(camera->m_fViewAngle, camera->m_fAspect, camera->m_fNear, camera->m_fFar);
+	gluPerspective(camera->m_fViewAngle, camera->GetAspect(), camera->m_fNear, camera->m_fFar);
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
@@ -64,6 +64,7 @@ void ClothRender::SetupCamera(DataCamera3D* camera)
 	//gluLookAt(camera->m_Eye.x, camera->m_Eye.y, camera->m_Eye.z,
 	//	camera->m_LookAt.x, camera->m_LookAt.y, camera->m_LookAt.z,
 	//	camera->m_Up.x, camera->m_Up.y, camera->m_Up.z);
+	glViewport(0, 0, camera->m_fWidth, camera->m_fHeight);
 }
 
 void ClothRender::SetupRender()

@@ -3,6 +3,7 @@
 
 //View3D 视图
 #include "OpenGLView.h"
+#include "ClothRender.h"
 
 class View3D : public OpenGLView
 {
@@ -36,4 +37,8 @@ protected:
 	afx_msg void OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
 	afx_msg BOOL OnMouseWheel(UINT nFlags, short zDelta, CPoint pt);
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
+
+
+private:
+	ClothRender m_Render;//用于管理实际的绘制操作
 };

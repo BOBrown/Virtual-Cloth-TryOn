@@ -20,7 +20,6 @@ public:
 	BOOL SceneBegin();
 	BOOL SceneEnd();
 	BOOL SceneFlip();
-	BOOL SetViewPort(int cx, int cy);
 protected:
 	glm::vec3 point_to_vec3(CPoint point);
 protected:

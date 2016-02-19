@@ -19,3 +19,14 @@ DataCamera3D::DataCamera3D()
 	m_fNear = 10;
 	m_fFar = 100000;
 }
+
+void DataCamera3D::SetSize(float width, float height)
+{
+	m_fWidth = width;
+	m_fHeight = height;
+}
+
+float DataCamera3D::GetAspect()
+{
+	return m_fWidth / m_fHeight;
+}

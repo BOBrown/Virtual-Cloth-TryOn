@@ -106,30 +106,6 @@ BOOL OpenGLView::SceneFlip()
 void OpenGLView::OnSize(UINT nType, int cx, int cy)
 {
 	CView::OnSize(nType, cx, cy);
-	SetViewPort(cx, cy);
-}
-
-BOOL OpenGLView::SetViewPort(int cx, int cy)
-{
-	int width, height;
-	double aspect;
-	width = cx;
-	height = cy;
-	if (cy == 0)
-	{
-		aspect = (double)width;
-	}
-	else
-	{
-		aspect = (double)width / (double)height;
-	}
-	glViewport(0, 0, width, height);
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	gluOrtho2D(0.0, cx, 0.0, cy);
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-	return true;
 }
 
 glm::vec3 OpenGLView::point_to_vec3(CPoint point)
