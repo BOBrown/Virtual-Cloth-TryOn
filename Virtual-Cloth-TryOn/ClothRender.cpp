@@ -40,11 +40,13 @@ void ClothRender::DrawCloth(DataCloth* cloth)
 
 void ClothRender::Render()
 {
-	CVirtualClothTryOnDoc* doc = GetActiveDocument();	
+	CVirtualClothTryOnDoc* doc = GetActiveDocument();//有了doc就有了绘制需要的数据文件	 
 	if (!doc) return;
 
 	SetupCamera(doc->m_pCamera3D);
 	SetupRender();
+
+	//下面可以测试绘制一些具体的图形
 	GLDrawTriangle();
 }
 
@@ -52,13 +54,17 @@ void ClothRender::SetupCamera(DataCamera3D* camera)
 {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(camera->m_fViewAngle, camera->m_fAspect, camera->m_fNear, camera->m_fFar);
+	gluPerspective(camera->m_fViewAngle, camera->GetAspect(), camera->m_fNear, camera->m_fFar);
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	gluLookAt(camera->m_Eye.x, camera->m_Eye.y, camera->m_Eye.z,
-		camera->m_LookAt.x, camera->m_LookAt.y, camera->m_LookAt.z,
-		camera->m_Up.x, camera->m_Up.y, camera->m_Up.z);
+
+	glLoadMatrixf(&camera->m_ViewMatrix[0][0]);
+	glMultMatrixf(&camera->m_ModelMatrix[0][0]);
+	//gluLookAt(camera->m_Eye.x, camera->m_Eye.y, camera->m_Eye.z,
+	//	camera->m_LookAt.x, camera->m_LookAt.y, camera->m_LookAt.z,
+	//	camera->m_Up.x, camera->m_Up.y, camera->m_Up.z);
+	glViewport(0, 0, camera->m_fWidth, camera->m_fHeight);
 }
 
 void ClothRender::SetupRender()
