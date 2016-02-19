@@ -58,9 +58,12 @@ void ClothRender::SetupCamera(DataCamera3D* camera)
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	gluLookAt(camera->m_Eye.x, camera->m_Eye.y, camera->m_Eye.z,
-		camera->m_LookAt.x, camera->m_LookAt.y, camera->m_LookAt.z,
-		camera->m_Up.x, camera->m_Up.y, camera->m_Up.z);
+
+	glLoadMatrixf(&camera->m_ViewMatrix[0][0]);
+	glMultMatrixf(&camera->m_ModelMatrix[0][0]);
+	//gluLookAt(camera->m_Eye.x, camera->m_Eye.y, camera->m_Eye.z,
+	//	camera->m_LookAt.x, camera->m_LookAt.y, camera->m_LookAt.z,
+	//	camera->m_Up.x, camera->m_Up.y, camera->m_Up.z);
 }
 
 void ClothRender::SetupRender()
