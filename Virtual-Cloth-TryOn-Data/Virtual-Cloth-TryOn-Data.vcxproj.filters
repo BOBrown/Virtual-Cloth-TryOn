@@ -30,6 +30,12 @@
     <ClCompile Include="DataPattern.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="DataMaterial.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DataTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -60,6 +66,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="DataMesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataMaterial.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataTexture.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
