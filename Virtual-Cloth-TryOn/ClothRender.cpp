@@ -7,6 +7,8 @@
 #include "../Virtual-Cloth-TryOn-Data/DataCloth.h"
 #include "../Virtual-Cloth-TryOn-Data/DataPattern.h"
 #include "../Virtual-Cloth-TryOn-Data/DataCamera3D.h"
+#include "../Virtual-Cloth-TryOn-Data/DataMaterial.h"
+#include "../Virtual-Cloth-TryOn-Data/DataTexture.h"
 #include <vector>
 
 
@@ -93,4 +95,65 @@ void ClothRender::SetupRender()
 	glLightfv(GL_LIGHT1, GL_DIFFUSE, lightColor1);
 	glLightfv(GL_LIGHT1, GL_POSITION, lightPos1);
 	//assert(glGetError() == 0);
+}
+
+void ClothRender::SetupMaterial(DataMaterial* material)
+{
+	if (!material)
+	{
+		material = &DataMaterial();
+	}
+	if (material->m_DiffuseMap)
+	{
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, material->m_DiffuseMap->m_iTextureID);
+	}
+	else
+	{
+		glDisable(GL_TEXTURE_2D);
+	}
+	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE,
+		(float*)(&(material->m_Diffuse)));
+	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT,
+		(float*)(&(material->m_Ambient)));
+	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR,
+		(float*)(&(material->m_Specular)));
+	glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS,
+		material->m_fShininess);
+}
+
+void ClothRender::DrawMesh(DataMesh* mesh)
+{
+	glPushMatrix();//使得上次opengl变换对本次变换不产生影响
+	// enable and specify pointers to vertex arrays
+	if (mesh->m_vVertice)
+	{
+		glEnableClientState(GL_VERTEX_ARRAY);
+		glVertexPointer(3, GL_FLOAT, 0, mesh->m_vVertice);
+	}
+	if (mesh->m_vNormal)
+	{
+		glEnableClientState(GL_NORMAL_ARRAY);
+		glNormalPointer(GL_FLOAT, 0, mesh->m_vNormal);
+	}
+	if (mesh->m_vTexcoord)
+	{
+		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+		glTexCoordPointer(2, GL_FLOAT, 0, mesh->m_vTexcoord);
+	}
+	for (int iGroup = 0; iGroup < mesh->m_TriangleGroup.size(); iGroup++)
+	{
+		DataTriangleGroup* group = mesh->m_TriangleGroup[iGroup];
+		if (!group || !group->m_iTriangleNumber)	continue;
+		SetupMaterial(group->m_pMaterial);
+		glDrawElements(GL_TRIANGLES, group->m_iTriangleNumber * 3, GL_UNSIGNED_INT, group->m_vTriangle);
+
+	}
+
+	if (mesh->m_vVertice)	glDisableClientState(GL_VERTEX_ARRAY);
+	if (mesh->m_vNormal)	glDisableClientState(GL_NORMAL_ARRAY);
+	if (mesh->m_vTexcoord)	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+
+	glPopMatrix();
+	glPopName();
 }

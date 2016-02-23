@@ -4,6 +4,8 @@
 class DataPattern;
 class DataCloth;
 class DataCamera3D;
+class DataMesh;
+class DataMaterial;
 
 class ClothRender
 {
@@ -13,5 +15,7 @@ public:
 	void Render();
 	void SetupCamera(DataCamera3D* camera);
 	void SetupRender();
+	void SetupMaterial(DataMaterial* material);
+	void DrawMesh(DataMesh* mesh);
 };
 #endif
