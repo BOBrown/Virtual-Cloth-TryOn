@@ -5,6 +5,7 @@
 #pragma once
 
 class View3D;
+class HumanBodySetting;
 
 class CMainFrame : public CFrameWnd
 {
@@ -42,8 +43,11 @@ protected:
 
 private:
 	View3D*		m_p3DView;
+	HumanBodySetting* m_pHumanBodySettingDlg;
+
 public:
 	BOOL CreateViews();
+	afx_msg void OnMenuHumanBodySetting();
 };
 
 

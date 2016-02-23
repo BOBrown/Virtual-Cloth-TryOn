@@ -51,6 +51,9 @@
     <ClInclude Include="ClothRender.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="HumanBodySetting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Virtual-Cloth-TryOn.cpp">
@@ -78,6 +81,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ClothRender.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HumanBodySetting.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

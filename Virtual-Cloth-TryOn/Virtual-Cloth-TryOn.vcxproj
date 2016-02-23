@@ -106,6 +106,7 @@
   <ItemGroup>
     <ClInclude Include="ClothRender.h" />
     <ClInclude Include="GLFunction.h" />
+    <ClInclude Include="HumanBodySetting.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="OpenGLView.h" />
     <ClInclude Include="Resource.h" />
@@ -119,6 +120,7 @@
   <ItemGroup>
     <ClCompile Include="ClothRender.cpp" />
     <ClCompile Include="GLFunction.cpp" />
+    <ClCompile Include="HumanBodySetting.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="OpenGLView.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -144,4 +146,9 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="Virtual-Cloth-TryOn.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

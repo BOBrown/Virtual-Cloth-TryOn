@@ -7,6 +7,7 @@
 
 #include "MainFrm.h"
 #include "View3D.h"
+#include "HumanBodySetting.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -22,6 +23,7 @@ const UINT uiLastUserToolBarId = uiFirstUserToolBarId + iMaxUserToolbars - 1;
 
 BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_WM_CREATE()
+	ON_COMMAND(ID_MENU_HUMAN_BODY_SETTING, &CMainFrame::OnMenuHumanBodySetting)
 END_MESSAGE_MAP()
 
 static UINT indicators[] =
@@ -113,3 +115,24 @@ BOOL CMainFrame::CreateViews()
 }
 // CMainFrame 消息处理程序
 
+
+
+void CMainFrame::OnMenuHumanBodySetting()
+{
+	m_pHumanBodySettingDlg = new HumanBodySetting();
+	m_pHumanBodySettingDlg->Create(IDD_HUMAN_BODY_SETTING, this);
+	m_pHumanBodySettingDlg->ShowWindow(SW_SHOW);
+
+
+	//m_pFeatureCylinderDlg = new FeatureCylinderSettingDlg();
+
+	////ModelView指针传入特征面对话框中 gaoyu 2014-6-26
+	//m_pFeatureCylinderDlg->pModelView = this;
+	//m_pFeatureCylinderDlg->Create(IDD_FEATURECYLINDERSETTINGDLG, this);
+	//m_pFeatureCylinderDlg->ShowWindow(SW_SHOW);
+	////m_Gmodel指针传入特征面对话框中 gaoyu 2014-6-27
+	//m_pFeatureCylinderDlg->pGmodel = GetDocument()->m_Gmodel;
+
+
+	// TODO:  在此添加命令处理程序代码
+}
