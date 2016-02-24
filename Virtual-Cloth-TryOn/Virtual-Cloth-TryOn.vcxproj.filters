@@ -54,10 +54,10 @@
     <ClInclude Include="HumanBodySetting.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="HuamnBodySettingMain.h">
+    <ClInclude Include="HumanBodySettingGender.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="HumanBodySettingGender.h">
+    <ClInclude Include="HumanBodySettingMain.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -92,10 +92,10 @@
     <ClCompile Include="HumanBodySetting.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="HuamnBodySettingMain.cpp">
+    <ClCompile Include="HumanBodySettingGender.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="HumanBodySettingGender.cpp">
+    <ClCompile Include="HumanBodySettingMain.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
