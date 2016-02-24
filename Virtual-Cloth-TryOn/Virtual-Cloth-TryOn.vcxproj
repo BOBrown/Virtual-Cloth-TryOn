@@ -106,7 +106,9 @@
   <ItemGroup>
     <ClInclude Include="ClothRender.h" />
     <ClInclude Include="GLFunction.h" />
+    <ClInclude Include="HuamnBodySettingMain.h" />
     <ClInclude Include="HumanBodySetting.h" />
+    <ClInclude Include="HumanBodySettingGender.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="OpenGLView.h" />
     <ClInclude Include="Resource.h" />
@@ -120,7 +122,9 @@
   <ItemGroup>
     <ClCompile Include="ClothRender.cpp" />
     <ClCompile Include="GLFunction.cpp" />
+    <ClCompile Include="HuamnBodySettingMain.cpp" />
     <ClCompile Include="HumanBodySetting.cpp" />
+    <ClCompile Include="HumanBodySettingGender.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="OpenGLView.cpp" />
     <ClCompile Include="stdafx.cpp">

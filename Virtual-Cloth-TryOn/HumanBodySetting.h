@@ -1,5 +1,7 @@
 #pragma once
 #include "afxcmn.h"
+#include "HuamnBodySettingMain.h"
+#include "HumanBodySettingGender.h"
 
 
 // HumanBodySetting ¶Ô»°¿ò
@@ -21,5 +23,9 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	CTabCtrl m_HuamnBodyTab;
+	HuamnBodySettingMain m_HuamnBodySettingMain;
+	HumanBodySettingGender m_HuamnBodySettingGender;
 	afx_msg void OnBnClickedOk();
+	afx_msg void OnTcnSelchangeHumanBodyTab(NMHDR *pNMHDR, LRESULT *pResult);
+	virtual BOOL OnInitDialog();
 };

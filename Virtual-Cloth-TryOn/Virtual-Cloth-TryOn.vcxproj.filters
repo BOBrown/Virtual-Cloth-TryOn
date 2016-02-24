@@ -54,6 +54,12 @@
     <ClInclude Include="HumanBodySetting.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="HuamnBodySettingMain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HumanBodySettingGender.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Virtual-Cloth-TryOn.cpp">
@@ -84,6 +90,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="HumanBodySetting.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HuamnBodySettingMain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HumanBodySettingGender.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
