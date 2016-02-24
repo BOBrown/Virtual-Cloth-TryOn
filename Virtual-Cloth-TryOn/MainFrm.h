@@ -4,8 +4,8 @@
 
 #pragma once
 
-class View3D;
 class HumanBodySetting;
+class View3D;
 
 class CMainFrame : public CFrameWnd
 {

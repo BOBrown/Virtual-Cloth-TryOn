@@ -229,3 +229,40 @@ glm::vec3 View3D::Conv2Dto3D(CPoint point, const glm::vec3 &ref)
 
 	return glm::vec3(v4d.x, v4d.y, v4d.z);
 }
+
+
+void View3D::ViewRotateX(float dx)
+{
+	CVirtualClothTryOnDoc* doc = GetActiveDocument();//有了doc就有了绘制需要的数据文件	 
+	assert(doc);
+	DataCamera3D* camera = doc->m_pCamera3D;
+
+	camera->m_ViewMatrix *= glm::rotate(dx*0.002f, glm::vec3(0, 1, 0));
+	glm::vec3 v = glm::vec3(glm::affineInverse(camera->m_ViewMatrix)*glm::vec4(1, 0, 0, 0));
+	camera->m_ViewMatrix *= glm::rotate(0.0f*0.002f, v);
+}
+void View3D::ViewRotateY(float dy)
+{
+	CVirtualClothTryOnDoc* doc = GetActiveDocument();//有了doc就有了绘制需要的数据文件	 
+	assert(doc);
+	DataCamera3D* camera = doc->m_pCamera3D;
+
+	camera->m_ViewMatrix *= glm::rotate(0.0f*0.002f, glm::vec3(0, 1, 0));
+	glm::vec3 v = glm::vec3(glm::affineInverse(camera->m_ViewMatrix)*glm::vec4(1, 0, 0, 0));
+	camera->m_ViewMatrix *= glm::rotate(dy*0.002f, v);
+}
+
+void View3D::ViewScale(float delta)
+{
+	CVirtualClothTryOnDoc* doc = GetActiveDocument();//有了doc就有了绘制需要的数据文件	 
+	assert(doc);
+	DataCamera3D* camera = doc->m_pCamera3D;
+
+	float speed_scale = delta;
+	camera->m_ViewMatrix = glm::translate(glm::vec3(0, 0, speed_scale)) * camera->m_ViewMatrix;
+}
+
+
+
+
+

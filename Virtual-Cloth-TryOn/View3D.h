@@ -52,11 +52,19 @@ protected:
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
 
 
-private:
+public:
 	ClothRender m_Render;//用于管理实际的绘制操作
 	OperationView m_iOperationView;//视角操作标识符
 	glm::vec3 m_LastPt;
 
 public:
 	glm::vec3 Conv2Dto3D(CPoint point, const glm::vec3 &ref);
+
+
+
+	/***********************************仅仅用于测试滑块的功能，将视角操作域滑块关联起来，以下********************************************/
+	void ViewRotateX(float dx);
+	void ViewRotateY(float dy);
+	void ViewScale(float delta);
+	/***********************************仅仅用于测试滑块的功能，将视角操作域滑块关联起来，以上********************************************/
 };

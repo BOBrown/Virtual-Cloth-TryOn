@@ -119,10 +119,18 @@ BOOL CMainFrame::CreateViews()
 
 void CMainFrame::OnMenuHumanBodySetting()
 {
+
+	m_p3DView->m_Render.Render();
+
+
 	m_pHumanBodySettingDlg = new HumanBodySetting();
+	m_pHumanBodySettingDlg->m_HumanBodySettingMain.m_p3DView = m_p3DView;
 	m_pHumanBodySettingDlg->Create(IDD_HUMAN_BODY_SETTING, this);
 	m_pHumanBodySettingDlg->ShowWindow(SW_SHOW);
 
+
+
+	//Render();
 
 	//m_pFeatureCylinderDlg = new FeatureCylinderSettingDlg();
 
