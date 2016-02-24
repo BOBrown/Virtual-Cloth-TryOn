@@ -10,6 +10,9 @@
 #define IDD_DIALOG1                     311
 #define IDD_DIALOG2                     312
 #define IDC_HUMAN_BODY_TAB              1000
+#define IDC_SLIDER1                     1001
+#define IDC_SLIDER2                     1002
+#define IDC_SLIDER3                     1003
 #define ID_32771                        32771
 #define ID_HUMAN_BODY_                  32772
 #define ID_MENU_HUMAN_BODY_SETTING      32773
@@ -20,7 +23,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        313
 #define _APS_NEXT_COMMAND_VALUE         32774
-#define _APS_NEXT_CONTROL_VALUE         1001
+#define _APS_NEXT_CONTROL_VALUE         1004
 #define _APS_NEXT_SYMED_VALUE           310
 #endif
 #endif

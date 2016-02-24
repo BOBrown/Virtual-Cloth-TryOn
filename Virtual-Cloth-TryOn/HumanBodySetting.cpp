@@ -75,6 +75,14 @@ BOOL HumanBodySetting::OnInitDialog()
 	m_HumanBodyTab.InsertItem(3, _T("Torso"));
 
 
+	//CFont m_NewFont;
+	//m_NewFont.CreateFont(50, 34, 0, 0, 800, TRUE, 0, 0, 1, 0, 0, 0, 0, _T("Arial"));
+	//m_HumanBodyTab.SetFont(&m_NewFont);
+
+	CFont m_NewFont;
+	m_NewFont.CreateFont(50, 34, 0, 0, 900, TRUE, 0, 0, 1, 0, 0, 0, 0, _T("Arial"));
+	m_HumanBodyTab.SetFont(&m_NewFont);
+
 
 	//设置IDC_TAB1为父窗口
 	m_HumanBodySettingMain.Create(IDD_DIALOG1, GetDlgItem(IDC_HUMAN_BODY_TAB));
@@ -85,10 +93,16 @@ BOOL HumanBodySetting::OnInitDialog()
 	m_HumanBodyTab.GetClientRect(&rc);
 
 	//调整子对话框在父窗口中的位置
+	//rc.top += 30;
+	//rc.bottom -= 8;
+	//rc.left += 8;
+	//rc.right -= 8;
+
+
 	rc.top += 30;
-	rc.bottom -= 8;
-	rc.left += 8;
-	rc.right -= 8;
+	rc.bottom -= 0;
+	rc.left += 0;
+	rc.right -= 0;
 
 	//设置子对话框尺寸并移动到指定位置
 	m_HumanBodySettingMain.MoveWindow(&rc);
