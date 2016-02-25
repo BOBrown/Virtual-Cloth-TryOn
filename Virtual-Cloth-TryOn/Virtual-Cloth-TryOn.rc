@@ -112,6 +112,7 @@ BEGIN
         MENUITEM "打开(&O)...\tCtrl+O",           ID_FILE_OPEN
         MENUITEM "保存(&S)\tCtrl+S",              ID_FILE_SAVE
         MENUITEM "另存为(&A)...",                  ID_FILE_SAVE_AS
+        MENUITEM "服装模型导入",                      ID_CLOTH_FILE_OPEN
         MENUITEM SEPARATOR
         MENUITEM "打印(&P)...\tCtrl+P",           ID_FILE_PRINT
         MENUITEM "打印预览(&V)",                    ID_FILE_PRINT_PREVIEW
@@ -214,6 +215,15 @@ FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
 END
 
+IDD_CLOTH_FILE_OPEN DIALOGEX 0, 0, 311, 177
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,200,156,50,14
+    PUSHBUTTON      "取消",IDCANCEL,254,156,50,14
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -287,6 +297,14 @@ BEGIN
     END
 
     IDD_DIALOG2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 304
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 170
+    END
+
+    IDD_CLOTH_FILE_OPEN, DIALOG
     BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 304

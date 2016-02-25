@@ -5,6 +5,7 @@
 #pragma once
 
 class HumanBodySetting;
+class ClothFileOpen;
 class View3D;
 
 class CMainFrame : public CFrameWnd
@@ -44,10 +45,12 @@ protected:
 private:
 	View3D*		m_p3DView;
 	HumanBodySetting* m_pHumanBodySettingDlg;
+	ClothFileOpen* m_pClothFileOpenDlg;
 
 public:
 	BOOL CreateViews();
 	afx_msg void OnMenuHumanBodySetting();
+	afx_msg void OnClothFileOpen();
 };
 
 

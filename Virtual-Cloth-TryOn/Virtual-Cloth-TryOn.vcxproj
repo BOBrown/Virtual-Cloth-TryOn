@@ -104,6 +104,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClothFileOpen.h" />
     <ClInclude Include="ClothRender.h" />
     <ClInclude Include="GLFunction.h" />
     <ClInclude Include="HumanBodySetting.h" />
@@ -120,6 +121,7 @@
     <ClInclude Include="Virtual-Cloth-TryOnView.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ClothFileOpen.cpp" />
     <ClCompile Include="ClothRender.cpp" />
     <ClCompile Include="GLFunction.cpp" />
     <ClCompile Include="HumanBodySetting.cpp" />
