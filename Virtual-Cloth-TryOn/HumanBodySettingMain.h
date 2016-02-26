@@ -24,16 +24,16 @@ public:
 
 public:
 	View3D*		m_p3DView;
-	CSliderCtrl m_cMainGender;
-	CSliderCtrl m_cMainFace;
-	CSliderCtrl m_cMainTorso;
-	bool m_bMainGender;
-	bool m_bMainFace;
-	bool m_bMainTorso;
+	CSliderCtrl m_cMainHeight;
+	CSliderCtrl m_cMainShoulderLength;
+	CSliderCtrl m_cMainBust;
+	bool m_bMainHeight;
+	bool m_bMainShoulderLength;
+	bool m_bMainBust;
 
-	int m_iMainGender;
-	int m_iMainFace;
-	int m_iMainTorso;
+	int m_iMainHeight;
+	int m_iMainShoulderLength;
+	int m_iMainBust;
 public:
 	afx_msg void OnNMCustomdrawSlider2(NMHDR *pNMHDR, LRESULT *pResult);
 	afx_msg void OnNMCustomdrawSlider1(NMHDR *pNMHDR, LRESULT *pResult);
