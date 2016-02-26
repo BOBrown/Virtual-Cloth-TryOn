@@ -43,4 +43,7 @@ public:
 	afx_msg void OnEnChangeEdit1();
 	// 人体模型身高参数
 	float m_fHuamnBodyHeight;
+	float m_fHumanBodyHeightMax;
+	float m_fHumanBodyHeightMin;
+	afx_msg void OnEnChangeEdit8();
 };

@@ -28,6 +28,8 @@
 #define IDC_EDIT5                       1013
 #define IDC_EDIT6                       1014
 #define IDC_EDIT7                       1015
+#define IDC_EDIT8                       1016
+#define IDC_EDIT9                       1017
 #define ID_32771                        32771
 #define ID_HUMAN_BODY_                  32772
 #define ID_MENU_HUMAN_BODY_SETTING      32773
@@ -40,7 +42,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        316
 #define _APS_NEXT_COMMAND_VALUE         32776
-#define _APS_NEXT_CONTROL_VALUE         1016
+#define _APS_NEXT_CONTROL_VALUE         1018
 #define _APS_NEXT_SYMED_VALUE           310
 #endif
 #endif
