@@ -40,4 +40,7 @@ public:
 	afx_msg void OnNMCustomdrawSlider3(NMHDR *pNMHDR, LRESULT *pResult);
 	virtual BOOL OnInitDialog();
 	afx_msg void OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
+	afx_msg void OnEnChangeEdit1();
+	// 人体模型身高参数
+	float m_fHuamnBodyHeight;
 };

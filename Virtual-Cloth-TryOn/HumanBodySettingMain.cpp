@@ -14,6 +14,7 @@ IMPLEMENT_DYNAMIC(HumanBodySettingMain, CDialogEx)
 
 HumanBodySettingMain::HumanBodySettingMain(CWnd* pParent /*=NULL*/)
 	: CDialogEx(HumanBodySettingMain::IDD, pParent)
+	, m_fHuamnBodyHeight(0)
 {
 }
 
@@ -27,6 +28,7 @@ void HumanBodySettingMain::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_SLIDER1, m_cMainHeight);
 	DDX_Control(pDX, IDC_SLIDER2, m_cMainShoulderLength);
 	DDX_Control(pDX, IDC_SLIDER3, m_cMainBust);
+	DDX_Text(pDX, IDC_EDIT1, m_fHuamnBodyHeight);
 }
 
 
@@ -36,6 +38,7 @@ BEGIN_MESSAGE_MAP(HumanBodySettingMain, CDialogEx)
 	ON_NOTIFY(NM_CUSTOMDRAW, IDC_SLIDER1, &HumanBodySettingMain::OnNMCustomdrawSlider1)
 	ON_NOTIFY(NM_CUSTOMDRAW, IDC_SLIDER3, &HumanBodySettingMain::OnNMCustomdrawSlider3)
 	ON_WM_HSCROLL()
+	ON_EN_CHANGE(IDC_EDIT1, &HumanBodySettingMain::OnEnChangeEdit1)
 END_MESSAGE_MAP()
 
 
@@ -113,6 +116,12 @@ BOOL HumanBodySettingMain::OnInitDialog()
 	m_iMainShoulderLength = 50;
 	m_iMainBust = 50;
 
+	//设置edit control中的初始值与slider control中一致
+	m_fHuamnBodyHeight = m_iMainHeight;
+
+
+	UpdateData(false);
+
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 异常:  OCX 属性页应返回 FALSE
 }
@@ -127,6 +136,9 @@ void HumanBodySettingMain::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrol
 		int dx = m_cMainHeight.GetPos();//取得当前位置值
 		m_p3DView->ViewRotateX((dx - m_iMainHeight)*10);
 		m_iMainHeight = dx;
+
+		//实时刷新edit control中的值
+		m_fHuamnBodyHeight = dx;
 
 		//重绘opengl中场景
 		m_p3DView->SceneBegin();
@@ -145,5 +157,21 @@ void HumanBodySettingMain::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrol
 		int c = m_cMainBust.GetPos();//取得当前位置值
 	}
 
+
+	UpdateData(false);
+
 	CDialogEx::OnHScroll(nSBCode, nPos, pScrollBar);
+}
+
+
+void HumanBodySettingMain::OnEnChangeEdit1()
+{
+	// TODO:  如果该控件是 RICHEDIT 控件，它将不
+	// 发送此通知，除非重写 CDialogEx::OnInitDialog()
+	// 函数并调用 CRichEditCtrl().SetEventMask()，
+	// 同时将 ENM_CHANGE 标志“或”运算到掩码中。
+
+	// TODO:  在此添加控件通知处理程序代码
+	UpdateData(true);
+	m_cMainHeight.SetPos(m_fHuamnBodyHeight); //设置滑块的默认当前位置
 }
