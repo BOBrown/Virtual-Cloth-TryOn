@@ -8,6 +8,7 @@
 #include "MainFrm.h"
 #include "View3D.h"
 #include "HumanBodySetting.h"
+#include "ClothFileOpen.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -24,6 +25,7 @@ const UINT uiLastUserToolBarId = uiFirstUserToolBarId + iMaxUserToolbars - 1;
 BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_WM_CREATE()
 	ON_COMMAND(ID_MENU_HUMAN_BODY_SETTING, &CMainFrame::OnMenuHumanBodySetting)
+	ON_COMMAND(ID_CLOTH_FILE_OPEN, &CMainFrame::OnClothFileOpen)
 END_MESSAGE_MAP()
 
 static UINT indicators[] =
@@ -143,4 +145,13 @@ void CMainFrame::OnMenuHumanBodySetting()
 
 
 	// TODO:  在此添加命令处理程序代码
+}
+
+
+void CMainFrame::OnClothFileOpen()
+{
+	// TODO:  在此添加命令处理程序代码
+	m_pClothFileOpenDlg = new ClothFileOpen();
+	m_pClothFileOpenDlg->Create(IDD_CLOTH_FILE_OPEN, this);
+	m_pClothFileOpenDlg->ShowWindow(SW_SHOW);
 }

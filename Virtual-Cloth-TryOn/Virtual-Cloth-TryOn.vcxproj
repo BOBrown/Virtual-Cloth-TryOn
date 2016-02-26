@@ -104,6 +104,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClothFileOpen.h" />
     <ClInclude Include="ClothRender.h" />
     <ClInclude Include="GLFunction.h" />
     <ClInclude Include="HumanBodySetting.h" />
@@ -114,12 +115,15 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="UnderCloth.h" />
+    <ClInclude Include="UpperCloth.h" />
     <ClInclude Include="View3D.h" />
     <ClInclude Include="Virtual-Cloth-TryOn.h" />
     <ClInclude Include="Virtual-Cloth-TryOnDoc.h" />
     <ClInclude Include="Virtual-Cloth-TryOnView.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ClothFileOpen.cpp" />
     <ClCompile Include="ClothRender.cpp" />
     <ClCompile Include="GLFunction.cpp" />
     <ClCompile Include="HumanBodySetting.cpp" />
@@ -131,6 +135,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="UnderCloth.cpp" />
+    <ClCompile Include="UpperCloth.cpp" />
     <ClCompile Include="View3D.cpp" />
     <ClCompile Include="Virtual-Cloth-TryOn.cpp" />
     <ClCompile Include="Virtual-Cloth-TryOnDoc.cpp" />
