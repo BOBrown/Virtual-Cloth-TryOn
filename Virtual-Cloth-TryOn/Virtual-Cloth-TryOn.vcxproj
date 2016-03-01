@@ -106,10 +106,12 @@
   <ItemGroup>
     <ClInclude Include="ClothFileOpen.h" />
     <ClInclude Include="ClothRender.h" />
+    <ClInclude Include="CommunicationSocket.h" />
     <ClInclude Include="GLFunction.h" />
     <ClInclude Include="HumanBodySetting.h" />
     <ClInclude Include="HumanBodySettingGender.h" />
     <ClInclude Include="HumanBodySettingMain.h" />
+    <ClInclude Include="InitSock.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="OpenGLView.h" />
     <ClInclude Include="Resource.h" />
@@ -125,6 +127,7 @@
   <ItemGroup>
     <ClCompile Include="ClothFileOpen.cpp" />
     <ClCompile Include="ClothRender.cpp" />
+    <ClCompile Include="CommunicationSocketcpp.cpp" />
     <ClCompile Include="GLFunction.cpp" />
     <ClCompile Include="HumanBodySetting.cpp" />
     <ClCompile Include="HumanBodySettingGender.cpp" />

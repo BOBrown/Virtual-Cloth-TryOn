@@ -69,6 +69,12 @@
     <ClInclude Include="UnderCloth.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CommunicationSocket.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="InitSock.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Virtual-Cloth-TryOn.cpp">
@@ -114,6 +120,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="UnderCloth.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CommunicationSocketcpp.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
