@@ -8,7 +8,7 @@
 
 
 // ClothFileOpen ¶Ô»°¿ò
-
+//xuhaocan_test addb by xuhaocan  2016.3.6
 IMPLEMENT_DYNAMIC(ClothFileOpen, CDialogEx)
 
 ClothFileOpen::ClothFileOpen(CWnd* pParent /*=NULL*/)
